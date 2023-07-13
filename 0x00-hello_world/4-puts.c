@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
  * main - main entry point
- * This program prints the sentence "Programming is like building a multilingual puzzle" and returns the value 0
- * which indicates its success
+ * This program prints the sentence and returns an integer value
+ * the return value 0 indicates success
  */
 int main(void)
 {
