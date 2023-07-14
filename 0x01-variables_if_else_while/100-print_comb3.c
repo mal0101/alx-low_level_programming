@@ -8,6 +8,7 @@ int main(void)
 {
 	int i;
 	int y;
+	int count = 0;
 
 	for (i = 0; i <= 8; i++)
 	{
@@ -15,8 +16,12 @@ int main(void)
 	{
 		putchar('0' + i);
 		putchar('0' + y);
-		putchar(',');
-		putchar(' ');
+		if (count < 44)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+		count++;
 	}
 	}
 	putchar('\n');
