@@ -38,3 +38,6 @@ You can listen to this soundtrack while coding :)
 
 Prototype: void times_table(void);
 Format: see example
+10- Write a function that adds two integers and returns the result.
+
+Prototype: int add(int, int);
