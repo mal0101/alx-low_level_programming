@@ -1,1 +1,2 @@
--This 0-putchar.c file contains a program that prints _putchar, followed by a new line.
+-This 0-putchar.c file contains a program that prints _putchar, followed by a new line_.
+-The 1-alphabet.c file contains a program that prints the alphabet in lower case
