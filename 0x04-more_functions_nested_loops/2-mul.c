@@ -5,7 +5,7 @@
  * @j: second int
  * Return: value of the multiplication
  */
-int mul(int a, int b)
+int mul(int i, int j)
 {
-	return (a * b);
+	return (i * j);
 }
