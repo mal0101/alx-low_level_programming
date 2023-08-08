@@ -1,53 +1,85 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <type.h>
-#include <string.h>
-/**
- * check_num -checks str num
- * @str: array string
- * Return: Always 0 (Success)
- */
-int check_num(char *str)
-{
-	unsigned int count;
+#include "main.h"
 
-	count = 0;
-	while (count < strlen(str))
+/**
+ * _atoi - converts a string to an integer
+ * @s: string to be converted
+ *
+ * Return: the int converted from the string
+ */
+int _atoi(char *s)
+{
+	int i, d, n, len, f, digit;
+
+	i = 0;
+	d = 0;
+	n = 0;
+	len = 0;
+	f = 0;
+	digit = 0;
+
+	while (s[len] != '\0')
+		len++;
+
+	while (i < len && f == 0)
 	{
-		if (!isdigit(str[count]))
+		if (s[i] == '-')
+			++d;
+
+		if (s[i] >= '0' && s[i] <= '9')
 		{
-			return (0);
+			digit = s[i] - '0';
+			if (d % 2)
+				digit = -digit;
+			n = n * 10 + digit;
+			f = 1;
+			if (s[i + 1] < '0' || s[i + 1] > '9')
+				break;
+			f = 0;
 		}
-		count++;
+		i++;
 	}
-	return (1);
+
+	if (f == 0)
+		return (0);
+
+	return (n);
 }
-/**
- * main -Print the name of the program
- * @argc: number of arguments
- * @argv: args
- * Return: Always 0 (Success)
- */
-int main(int argc, char *argv)
-{
-	int count = 1;
-	int str_to_int;
-	int sum = 0;
 
-	while (count < argc)
+/**
+ * main - adds two positive number
+ * @argc: number of arguments
+ * @argv: array of arguents
+ *
+ * Return: 0 (Success), or 1 (Success)
+ */
+int main(int argc, char *argv[])
+{
+	int sum, num, i, j, k;
+
+	sum = 0;
+
+	for (i = 1; i < argc; i++)
 	{
-		if (check_num(arg[count]))
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			str_to_int = atoi(argv[count]);
-			sum += str_to_int;
+			if (argv[i][j] > '9' || argv[i][j] < '0')
+			{
+				puts("Error");
+				return (1);
+			}
 		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
-		count++;
 	}
+
+	for (k = 1; k < argc; k++)
+	{
+		num = _atoi(argv[k]);
+		if (num >= 0)
+		{
+			sum += num;
+		}
+	}
+
 	printf("%d\n", sum);
 	return (0);
 }
