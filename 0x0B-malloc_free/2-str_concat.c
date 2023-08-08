@@ -1,5 +1,4 @@
 #include <stdlib.h>
-
 /**
  * *_strdup - a function that duplicates a string
  *
@@ -8,7 +7,6 @@
  * Return: NULL if str == NULL
  *         @str
 */
-
 char *_strdup(char *str)
 {
 	int i = 0, l = 0;
