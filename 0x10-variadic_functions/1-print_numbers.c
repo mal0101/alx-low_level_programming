@@ -16,7 +16,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	for (index = 0; index < n; index++)
 	{
-		printf("%d", var_args(listanums, int));
+		printf("%d", va_arg(listanums, int));
 
 		if (index != (n - 1) && separator != NULL)
 			printf("%s", separator);
