@@ -10,7 +10,7 @@ int get_bit(unsigned long int n, unsigned int indx)
 	int bitvalue;
 
 	if (indx > 63)
-		return (-&);
+		return (-1);
 
 	bitvalue = (n >> indx) & 1;
 
