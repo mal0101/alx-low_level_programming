@@ -17,7 +17,7 @@ void print_binary(unsigned long int a)
 			_putchar('1');
 			l7sab++;
 		}
-		else if (count)
+		else if (l7sab)
 			_putchar('0');
 	}
 	if (!l7sab)
