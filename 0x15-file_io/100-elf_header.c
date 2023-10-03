@@ -13,7 +13,7 @@ void print_data(unsigned char *e_ident);
 void print_version(unsigned char *e_ident);
 void print_abi(unsigned char *e_ident);
 void print_osabi(unsigned char *e_ident);
-void print_type(unsigned inte_type, unsigned char *e_ident);
+void print_type(unsigned int e_type, unsigned char *e_ident);
 void print_entry(unsigned long int e_entry, unsigned char *e_ident);
 void close_elf(int_elf);
 
@@ -166,7 +166,7 @@ void print_osabi(unsigned char *e_ident)
 */
 void print_abi(unsigned char *e_ident)
 {
-	printf( ABI Version: %d\n", e_ident[EI_ABIVERSION]);
+	printf(" ABI Version: %d\n", e_ident[EI_ABIVERSION]);
 }
 /**
 * print_type - prints the type of an elf header
@@ -219,10 +219,6 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 * @elf: The file descriptor of the ELF file
 *
 * description: if the file cannont be closed - exit code 98
-*/
-void close_elf - closes and elf file
-* @elf: the file descriptor of the elf file
-* description: if the file cannot be closed - exit 98
 */
 void close_elf(int elf)
 {
@@ -282,4 +278,3 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	close_elf(o);
 	return (0);
 }
- 
